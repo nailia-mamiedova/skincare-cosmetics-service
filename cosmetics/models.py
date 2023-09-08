@@ -6,10 +6,19 @@ class Brand(models.Model):
     name = models.CharField(max_length=255, unique=True)
     country = models.CharField(max_length=255)
 
+    class Meta:
+        ordering = ["name"]
+
+    def __str__(self):
+        return f"{self.name} ({self.country})"
+
 
 class SkinType(models.Model):
     name = models.CharField(max_length=255, unique=True)
     description = models.TextField()
+
+    def __str__(self):
+        return self.name
 
 
 class Product(models.Model):
@@ -19,8 +28,18 @@ class Product(models.Model):
     ingredients = models.TextField()
     description = models.TextField()
 
+    def __str__(self):
+        return f"{self.brand.name} {self.name}"
+
 
 class Member(AbstractUser):
     date_of_birth = models.DateField(null=True)
     skin_type = models.ForeignKey(SkinType, on_delete=models.CASCADE, null=True)
     favorite_products = models.ManyToManyField(Product, related_name="members")
+
+    class Meta:
+        verbose_name = "member"
+        verbose_name_plural = "members"
+
+    def __str__(self):
+        return f"{self.username} ({self.first_name} {self.last_name})"
