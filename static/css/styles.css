@@ -62,3 +62,18 @@ a:hover {
 .custom-logout-icon {
     margin-left: 10px;
 }
+
+.custom-footer {
+    background-color: #C73B65;
+    width: 100%;
+    padding: 20px 200px;
+    bottom: 0;
+    position: absolute;
+    text-align: center;
+}
+
+.custom-footer-text {
+    font-weight: 400;
+    font-size: 14px;
+    color: #FFD3E6;
+}
