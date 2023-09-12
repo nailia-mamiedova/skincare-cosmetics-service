@@ -1,0 +1,26 @@
+<nav class="custom-nav">
+  <a class="custom-logo" href="{% url 'cosmetics:index' %}">SkinCo</a>
+  <div>
+    <ul class="custom-nav-list">
+      <li><a class="custom-nav-link {% if request.path == '/' %}custom-nav-active{% endif %}" href="#">Home</a></li>
+      <li><a class="custom-nav-link" href="#">Brands</a></li>
+      <li><a class="custom-nav-link" href="#">Products</a></li>
+      <li><a class="custom-nav-link" href="#">Skin Types</a></li>
+      <li><a class="custom-nav-link" href="#">Members</a></li>
+    </ul>
+  </div>
+  <div>
+    <ul class="custom-nav-list">
+      <li>
+        <a class="custom-nav-link custom-nav-active" href="#">
+          {{ user.username }}
+        </a>
+      </li>
+      <li>
+        <a class="custom-nav-link" href="#">
+          Logout
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
