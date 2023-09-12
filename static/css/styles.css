@@ -54,3 +54,11 @@ a:hover {
 .custom-nav-active {
     font-weight: 800;
 }
+
+.custom-user-icon {
+    margin-right: 10px;
+}
+
+.custom-logout-icon {
+    margin-left: 10px;
+}
