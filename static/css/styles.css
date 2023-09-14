@@ -158,3 +158,49 @@ p {
 .custom-list-element:not(:last-child) {
     padding-bottom: 10px;
 }
+
+.custom-login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 450px;
+    width: 100%;
+    background: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px #FFD3E6;
+}
+
+.custom-login-form{
+    padding: 50px 40px;
+}
+
+.custom-login-form header{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.custom-login-form input{
+    height: 60px;
+    width: 100%;
+    padding: 0 15px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #DDD;
+    border-radius: 6px;
+    outline: none;
+}
+
+.custom-login-form input.button{
+    color: #FFF;
+    background: #C73B65;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin: 20px 0 0 0;
+}
+
+.custom-login-form input.button:hover{
+    background: #9B2D50;
+}
