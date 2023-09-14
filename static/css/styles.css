@@ -12,6 +12,44 @@ a:hover {
     text-decoration: none;
 }
 
+ul, ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 32px;
+    margin: 0;
+    color: #C73B65;
+}
+
+h2 {
+    font-weight: 800;
+    font-size: 26px;
+    margin: 0;
+    color: #C73B65;
+}
+
+h3 {
+    font-weight: 800;
+    font-size: 20px;
+    margin: 0;
+    color: #C73B65;
+}
+
+strong {
+    font-weight: 800;
+    color: #C73B65;
+}
+
+p {
+    font-weight: 400;
+    font-size: 16px;
+    margin: 0;
+}
+
 .custom-nav {
     background-color: #FFD3E6;
     padding: 20px 200px;
@@ -32,8 +70,6 @@ a:hover {
 
 .custom-nav-list {
     list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
     gap: 60px;
 }
