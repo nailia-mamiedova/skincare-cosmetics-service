@@ -105,6 +105,8 @@ AUTH_USER_MODEL = "cosmetics.Member"
 
 LOGIN_REDIRECT_URL = "/"
 
+LOGIN_URL = '/restricted/'
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
