@@ -1,1 +1,47 @@
 {% extends "base.html" %}
+
+{% block title %}Home page{% endblock %}
+
+{% block content %}
+
+<h1 class="custom-40px-padding-bottom">Welcome to Skincare Service!</h1>
+<p class="custom-30px-padding-bottom">It's a service where you can explore skincare products, brands, and skin types. Share your favorites, see what others recommend, and contribute to an ever-expanding collection.</p>
+
+<h2 class="custom-30px-padding-bottom">Quick stats:</h2>
+
+<div class="custom-30px-padding-bottom">
+  <div class="custom-statistics">
+    <div class="statistics-cell"><h1 class="custom-stat-num">{{ num_brands }}</h1> brand{{ num_brands|pluralize }}</div>
+    <div class="statistics-divider"></div>
+    <div class="statistics-cell"><h1 class="custom-stat-num">{{ num_products }}</h1> product{{ num_products|pluralize }}</div>
+    <div class="statistics-divider"></div>
+    <div class="statistics-cell"><h1 class="custom-stat-num">{{ num_skin_types }}</h1> skin type{{ num_skin_types|pluralize }}</div>
+  </div>
+</div>
+
+<ul class="custom-30px-padding-bottom">
+  <li class="custom-list-element">
+    <strong>Brands:</strong>
+    Browse through our collection of <strong>{{ num_brands }}</strong> skincare brand{{ num_brands|pluralize }}.
+  </li>
+  <li class="custom-list-element">
+    <strong>Products:</strong>
+    Explore <strong>{{ num_products }}</strong> skincare product{{ num_products|pluralize }} across our brand collection.
+  </li>
+  <li class="custom-list-element">
+    <strong>Skin types:</strong>
+    Here you can find information about <strong>{{ num_skin_types }}</strong> skin type{{ num_skin_types|pluralize }}.
+  </li>
+  <li class="custom-list-element">
+    <strong>Members:</strong>
+    Our community consists of <strong>{{ num_members }}</strong> skincare enthusiast{{ num_members|pluralize }}.
+  </li>
+</ul>
+
+<p class="custom-30px-padding-bottom">You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.</p>
+
+<p class="custom-30px-padding-bottom">
+  Thank you for being a valued member of our community. Your journey to perfect skincare continues here.
+</p>
+
+{% endblock %}
