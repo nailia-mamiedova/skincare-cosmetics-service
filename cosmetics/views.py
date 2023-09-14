@@ -24,3 +24,7 @@ def index(request):
     }
 
     return render(request, "cosmetics/index.html", context=context)
+
+
+def restricted_view(request):
+    return render(request, 'cosmetics/restricted.html')
