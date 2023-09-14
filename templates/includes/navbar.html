@@ -11,18 +11,26 @@
   </div>
   <div>
     <ul class="custom-nav-list">
-      <li>
-        <a class="custom-nav-link custom-nav-active" href="#">
-          <img class="custom-user-icon" src="/static/icons/user.svg" alt="user icon">
-          {{ user.username }}
-        </a>
-      </li>
-      <li>
-        <a class="custom-nav-link" href="#">
-          Logout
-          <img class="custom-logout-icon" src="/static/icons/logout.svg" alt="logout icon">
-        </a>
-      </li>
+      {% if user.is_authenticated %}
+        <li>
+          <a class="custom-nav-link custom-nav-active" href="#">
+            <img class="custom-user-icon" src="/static/icons/user.svg" alt="user icon">
+            {{ user.username }}
+          </a>
+        </li>
+        <li>
+          <a class="custom-nav-link" href="#">
+            Logout
+            <img class="custom-login-logout-icon" src="/static/icons/logout.svg" alt="logout icon">
+          </a>
+        </li>
+      {% else %}
+        <li>
+          <a class="custom-nav-link" href="#">
+            Login
+          </a>
+        </li>
+      {% endif %}
     </ul>
   </div>
 </nav>
