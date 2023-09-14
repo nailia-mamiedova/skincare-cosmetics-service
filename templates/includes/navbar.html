@@ -19,14 +19,14 @@
           </a>
         </li>
         <li>
-          <a class="custom-nav-link" href="#">
+          <a class="custom-nav-link" href="{% url 'logout'%}?next={{ requested.path}}">
             Logout
             <img class="custom-login-logout-icon" src="/static/icons/logout.svg" alt="logout icon">
           </a>
         </li>
       {% else %}
         <li>
-          <a class="custom-nav-link" href="#">
+          <a class="custom-nav-link" href="{% url 'login'%}?next={{ requested.path }}">
             Login
           </a>
         </li>
