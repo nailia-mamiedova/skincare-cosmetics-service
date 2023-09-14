@@ -1,7 +1,9 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from .models import Brand, Product, SkinType, Member
 
 
+@login_required
 def index(request):
     """View function for the home page of the site."""
 
