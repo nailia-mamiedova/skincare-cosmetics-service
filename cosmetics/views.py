@@ -44,5 +44,12 @@ class BrandCreateView(LoginRequiredMixin, generic.CreateView):
     success_url = "/brands/"
 
 
+class BrandUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Brand
+    fields = "__all__"
+    template_name = "cosmetics/brand_form.html"
+    success_url = "/brands/"
+
+
 def restricted_view(request):
     return render(request, 'cosmetics/restricted.html')
