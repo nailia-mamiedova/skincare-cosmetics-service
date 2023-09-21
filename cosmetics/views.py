@@ -3,6 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.views import generic
 
+from .forms import BrandSearchForm
 from .models import Brand, Product, SkinType, Member
 
 
@@ -34,6 +35,13 @@ class BrandListView(LoginRequiredMixin, generic.ListView):
     context_object_name = "brand_list"
     template_name = "cosmetics/brand_list.html"
     paginate_by = 8
+
+
+class BrandCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Brand
+    fields = "__all__"
+    template_name = "cosmetics/brand_form.html"
+    success_url = "/brands/"
 
 
 def restricted_view(request):
