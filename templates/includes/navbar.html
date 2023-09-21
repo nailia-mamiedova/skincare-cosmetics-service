@@ -3,7 +3,7 @@
   <div>
     <ul class="custom-nav-list">
       <li><a class="custom-nav-link {% if request.path == '/' %}custom-nav-active{% endif %}" href="{% url 'cosmetics:index' %}">Home</a></li>
-      <li><a class="custom-nav-link" href="#">Brands</a></li>
+      <li><a class="custom-nav-link {% if request.path == '/brands/' %}custom-nav-active{% endif %}" href="{% url 'cosmetics:brand-list' %}">Brands</a></li>
       <li><a class="custom-nav-link" href="#">Products</a></li>
       <li><a class="custom-nav-link" href="#">Skin Types</a></li>
       <li><a class="custom-nav-link" href="#">Members</a></li>
