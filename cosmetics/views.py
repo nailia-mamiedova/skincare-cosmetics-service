@@ -1,5 +1,8 @@
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
+from django.views import generic
+
 from .models import Brand, Product, SkinType, Member
 
 
@@ -24,6 +27,13 @@ def index(request):
     }
 
     return render(request, "cosmetics/index.html", context=context)
+
+
+class BrandListView(LoginRequiredMixin, generic.ListView):
+    model = Brand
+    context_object_name = "brand_list"
+    template_name = "cosmetics/brand_list.html"
+    paginate_by = 8
 
 
 def restricted_view(request):
