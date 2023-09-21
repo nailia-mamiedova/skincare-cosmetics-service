@@ -1,1 +1,21 @@
 {% extends "base.html" %}
+
+{% block title %}Brands{% endblock %}
+
+{% block content %}
+  <h1 class="custom-40px-padding-bottom">Brands</h1>
+
+  <div class="custom-30px-padding-bottom">
+    <div class="custom-table">
+      {% if brand_list %}
+        {% for brand in brand_list %}
+          <div class="custom-data-table">
+            <p><strong>{{ brand.name }}</strong> ({{ brand.country }})</p>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="">No brands have been added yet.</div>
+      {% endif%}
+    </div>
+  </div>
+{% endblock %}
