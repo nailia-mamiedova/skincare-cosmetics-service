@@ -122,5 +122,11 @@ class ProductUpdateView(LoginRequiredMixin, generic.UpdateView):
     success_url = "/products/"
 
 
+class ProductDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Product
+    template_name = "cosmetics/product_confirm_delete.html"
+    success_url = "/cosmetics/products/"
+
+
 def restricted_view(request):
     return render(request, 'cosmetics/restricted.html')
