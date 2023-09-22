@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %} {{ object|yesno:"Update,Add" }} product {% endblock %}
+
+{% block content %}
+<div class="">
+  <h1 class="custom-40px-padding-bottom">{{ object|yesno:"Update,Add" }} product</h1>
+  <form action="" method="post" novalidate>
+    {% csrf_token %}
+    {{ form|crispy }}
+
+    <p class="custom-20px-padding-bottom"></p>
+
+    <input type="submit" value="Submit" class="custom-submit-button">
+  </form>
+</div>
+{% endblock %}
