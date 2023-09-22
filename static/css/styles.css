@@ -263,3 +263,7 @@ p {
     border: 1px solid #C73B65;
     background-color: #C73B65;
 }
+
+.custom-update-delete:first-child {
+     margin-right: 10px;
+}

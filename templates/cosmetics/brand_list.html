@@ -11,6 +11,10 @@
         {% for brand in brand_list %}
           <div class="custom-data-table">
             <p><strong>{{ brand.name }}</strong> ({{ brand.country }})</p>
+            <div>
+              <a href="{% url 'cosmetics:brand-update' pk=brand.id%}" class="custom-update-delete"><img src="/static/icons/update.svg" alt=""></a>
+              <a href="{% url 'cosmetics:brand-delete' pk=brand.id%}" class="custom-update-delete"><img src="/static/icons/delete.svg" alt=""></a>
+            </div>
           </div>
         {% endfor %}
       {% else %}
