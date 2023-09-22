@@ -36,6 +36,28 @@ class BrandListView(LoginRequiredMixin, generic.ListView):
     template_name = "cosmetics/brand_list.html"
     paginate_by = 8
 
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(BrandListView, self).get_context_data(**kwargs)
+
+        name = self.request.GET.get("name", "")
+
+        context["search_form"] = BrandSearchForm(initial={
+            "name": name,
+        })
+
+        return context
+
+    def get_queryset(self):
+        queryset = Brand.objects.all()
+        form = BrandSearchForm(self.request.GET)
+
+        if form.is_valid():
+            return queryset.filter(
+                name__icontains=form.cleaned_data["name"],
+            )
+
+        return queryset
+
 
 class BrandCreateView(LoginRequiredMixin, generic.CreateView):
     model = Brand
