@@ -267,3 +267,10 @@ p {
 .custom-update-delete:first-child {
      margin-right: 10px;
 }
+
+.custom-search-button {
+    padding: 6px 20px;
+    border: 1px solid #FFD3E6;
+    border-radius: 0 10px 10px 0;
+    background-color: #FFD3E6;
+}
