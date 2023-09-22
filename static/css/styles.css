@@ -274,3 +274,25 @@ p {
     border-radius: 0 10px 10px 0;
     background-color: #FFD3E6;
 }
+
+.custom-head {
+    margin: 0 10px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.custom-add-button {
+    color: #fff;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #C73B65;
+    border: 1px solid #C73B65;
+    align-items: center;
+}
+
+.custom-add-button:hover {
+    background-color: #9B2D50;
+    color: #fff;
+}
