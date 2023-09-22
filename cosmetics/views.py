@@ -3,7 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.views import generic
 
-from .forms import BrandSearchForm
+from .forms import BrandSearchForm, ProductSearchForm
 from .models import Brand, Product, SkinType, Member
 
 
@@ -77,6 +77,13 @@ class BrandDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Brand
     template_name = "cosmetics/brand_confirm_delete.html"
     success_url = "/cosmetics/brands/"
+
+
+class ProductListView(LoginRequiredMixin, generic.ListView):
+    model = Product
+    context_object_name = "product_list"
+    template_name = "cosmetics/product_list.html"
+    paginate_by = 8
 
 
 def restricted_view(request):
