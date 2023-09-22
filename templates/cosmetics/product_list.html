@@ -15,7 +15,7 @@
     <div class="custom-table">
       {% if product_list %}
         {% for product in product_list %}
-          <div class="custom-data-table">
+          <div class="custom-data-table products">
             <p><a href="#"><strong>{{ product.name }}</strong></a> by {{ product.brand.name }}</p>
             <div>
               <a href="{% url 'cosmetics:product-update' pk=product.id%}" class="custom-update-delete"><img src="/static/icons/update.svg" alt=""></a>
