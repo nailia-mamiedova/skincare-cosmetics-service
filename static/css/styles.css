@@ -239,3 +239,27 @@ p {
     background-color: #9B2D50;
     color: #fff;
 }
+
+.custom-pagination {
+    display: flex;
+    justify-content: right;
+    margin-right: 10px;
+}
+
+.page-link {
+    padding: 8px 12px;
+    height: 100%;
+    border: 1px solid #C73B65;
+}
+
+.page-link:hover {
+    border: 1px solid #C73B65;
+    background-color: #FFD3E6;
+}
+
+.page-item.active .page-link {
+    font-weight: 800;
+    padding: 12px 20px;
+    border: 1px solid #C73B65;
+    background-color: #C73B65;
+}
