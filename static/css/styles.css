@@ -129,6 +129,10 @@ p {
     padding-bottom: 30px;
 }
 
+.custom-20px-padding-bottom {
+    padding-bottom: 20px;
+}
+
 .custom-statistics {
     border-radius: 10px;
     display: flex;
@@ -221,4 +225,17 @@ p {
     display: flex;
     justify-content: space-between;
     margin: 10px;
+}
+
+.custom-submit-button {
+    background-color: #C73B65;
+    color: #fff;
+    border: 1px solid #C73B65;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.custom-submit-button:hover {
+    background-color: #9B2D50;
+    color: #fff;
 }
