@@ -3,7 +3,13 @@
 {% block title %}Brands{% endblock %}
 
 {% block content %}
-  <h1 class="custom-40px-padding-bottom">Brands</h1>
+  <h1>Brands</h1>
+  <div class="custom-40px-padding-bottom custom-head">
+    {% include "includes/search_form.html" %}
+    <a class="custom-add-button" href="{% url 'cosmetics:brand-create' %}">
+      Add new
+    </a>
+  </div>
 
   <div class="custom-30px-padding-bottom">
     <div class="custom-table">
