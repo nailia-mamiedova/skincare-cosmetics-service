@@ -108,5 +108,19 @@ class ProductListView(LoginRequiredMixin, generic.ListView):
         return queryset
 
 
+class ProductCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Product
+    fields = "__all__"
+    template_name = "cosmetics/product_form.html"
+    success_url = "/products/"
+
+
+class ProductUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Product
+    fields = "__all__"
+    template_name = "cosmetics/product_form.html"
+    success_url = "/products/"
+
+
 def restricted_view(request):
     return render(request, 'cosmetics/restricted.html')
