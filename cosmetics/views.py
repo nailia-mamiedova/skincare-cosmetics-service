@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views import generic
 
 from .forms import BrandSearchForm, ProductSearchForm
@@ -60,21 +61,18 @@ class BrandListView(LoginRequiredMixin, generic.ListView):
 class BrandCreateView(LoginRequiredMixin, generic.CreateView):
     model = Brand
     fields = "__all__"
-    template_name = "cosmetics/brand_form.html"
-    success_url = "/brands/"
+    success_url = reverse_lazy("cosmetics:brand-list")
 
 
 class BrandUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Brand
     fields = "__all__"
-    template_name = "cosmetics/brand_form.html"
-    success_url = "/brands/"
+    success_url = reverse_lazy("cosmetics:brand-list")
 
 
 class BrandDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Brand
-    template_name = "cosmetics/brand_confirm_delete.html"
-    success_url = "/cosmetics/brands/"
+    success_url = reverse_lazy("cosmetics:brand-list")
 
 
 class ProductListView(LoginRequiredMixin, generic.ListView):
@@ -107,21 +105,18 @@ class ProductListView(LoginRequiredMixin, generic.ListView):
 class ProductCreateView(LoginRequiredMixin, generic.CreateView):
     model = Product
     fields = "__all__"
-    template_name = "cosmetics/product_form.html"
-    success_url = "/products/"
+    success_url = reverse_lazy("cosmetics:product-list")
 
 
 class ProductUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Product
     fields = "__all__"
-    template_name = "cosmetics/product_form.html"
-    success_url = "/products/"
+    success_url = reverse_lazy("cosmetics:product-list")
 
 
 class ProductDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Product
-    template_name = "cosmetics/product_confirm_delete.html"
-    success_url = "/cosmetics/products/"
+    success_url = reverse_lazy("cosmetics:product-list")
 
 
 def restricted_view(request):
