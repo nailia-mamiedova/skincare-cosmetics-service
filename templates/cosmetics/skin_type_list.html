@@ -6,7 +6,7 @@
   <h1>Skin Types</h1>
   <div class="custom-40px-padding-bottom custom-head">
     {% include "includes/search_form.html" %}
-    <a class="custom-add-button" href="#">
+    <a class="custom-add-button" href="{% url 'cosmetics:skin-type-create' %}">
       Add new
     </a>
   </div>
@@ -19,8 +19,8 @@
             <div class="skin-type-header">
               <strong>{{ skin_type.name }}</strong>
               <div>
-                <a href="#" class="custom-update-delete"><img src="/static/icons/update.svg" alt=""></a>
-                <a href="#" class="custom-update-delete"><img src="/static/icons/delete.svg" alt=""></a>
+                <a href="{% url 'cosmetics:skin-type-update' pk=skin_type.id %}" class="custom-update-delete"><img src="/static/icons/update.svg" alt=""></a>
+                <a href="{% url 'cosmetics:skin-type-delete' pk=skin_type.id %}" class="custom-update-delete"><img src="/static/icons/delete.svg" alt=""></a>
               </div>
             </div>
             <p class="skin-type-description">{{ skin_type.description }}</p>
