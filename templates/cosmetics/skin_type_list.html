@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Skin Types{% endblock %}
+
+{% block content %}
+  <h1>Skin Types</h1>
+  <div class="custom-40px-padding-bottom custom-head">
+    {% include "includes/search_form.html" %}
+    <a class="custom-add-button" href="#">
+      Add new
+    </a>
+  </div>
+
+  <div class="custom-30px-padding-bottom">
+    <div class="custom-table">
+      {% if skin_type_list %}
+        {% for skin_type in skin_type_list %}
+          <div class="custom-skin-type-table">
+            <div class="skin-type-header">
+              <strong>{{ skin_type.name }}</strong>
+              <div>
+                <a href="#" class="custom-update-delete"><img src="/static/icons/update.svg" alt=""></a>
+                <a href="#" class="custom-update-delete"><img src="/static/icons/delete.svg" alt=""></a>
+              </div>
+            </div>
+            <p class="skin-type-description">{{ skin_type.description }}</p>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="">No skin types have been added yet.</div>
+      {% endif%}
+    </div>
+  </div>
+{% endblock %}
