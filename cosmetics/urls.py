@@ -11,6 +11,9 @@ from .views import (
     ProductUpdateView,
     ProductDeleteView,
     SkinTypeListView,
+    SkinTypeCreateView,
+    SkinTypeUpdateView,
+    SkinTypeDeleteView,
 )
 
 urlpatterns = [
@@ -25,6 +28,9 @@ urlpatterns = [
     path("products/<int:pk>/update/", ProductUpdateView.as_view(), name="product-update"),
     path("products/<int:pk>/delete/", ProductDeleteView.as_view(), name="product-delete"),
     path("skin_types/", SkinTypeListView.as_view(), name="skin-type-list"),
+    path("skin_types/create/", SkinTypeCreateView.as_view(), name="skin-type-create"),
+    path("skin_types/<int:pk>/update/", SkinTypeUpdateView.as_view(), name="skin-type-update"),
+    path("skin_types/<int:pk>/delete/", SkinTypeDeleteView.as_view(), name="skin-type-delete"),
 ]
 
 app_name = "cosmetics"
