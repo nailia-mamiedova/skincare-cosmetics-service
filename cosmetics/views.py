@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
 
-from .forms import BrandSearchForm, ProductSearchForm
+from .forms import BrandSearchForm, ProductSearchForm, SkinTypeSearchForm
 from .models import Brand, Product, SkinType, Member
 
 
@@ -117,6 +117,13 @@ class ProductUpdateView(LoginRequiredMixin, generic.UpdateView):
 class ProductDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Product
     success_url = reverse_lazy("cosmetics:product-list")
+
+
+class SkinTypeListView(LoginRequiredMixin, generic.ListView):
+    model = SkinType
+    context_object_name = "skin_type_list"
+    template_name = "cosmetics/skin_type_list.html"
+    paginate_by = 4
 
 
 def restricted_view(request):
