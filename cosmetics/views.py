@@ -148,5 +148,25 @@ class SkinTypeListView(LoginRequiredMixin, generic.ListView):
         return queryset
 
 
+class SkinTypeCreateView(LoginRequiredMixin, generic.CreateView):
+    model = SkinType
+    fields = "__all__"
+    template_name = "cosmetics/skin_type_form.html"
+    success_url = reverse_lazy("cosmetics:skin-type-list")
+
+
+class SkinTypeUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = SkinType
+    fields = "__all__"
+    template_name = "cosmetics/skin_type_form.html"
+    success_url = reverse_lazy("cosmetics:skin-type-list")
+
+
+class SkinTypeDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = SkinType
+    template_name = "cosmetics/skin_type_confirm_delete.html"
+    success_url = reverse_lazy("cosmetics:skin-type-list")
+
+
 def restricted_view(request):
     return render(request, 'cosmetics/restricted.html')
