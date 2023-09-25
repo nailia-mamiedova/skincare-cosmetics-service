@@ -32,8 +32,6 @@ def index(request):
 
 class BrandListView(LoginRequiredMixin, generic.ListView):
     model = Brand
-    context_object_name = "brand_list"
-    template_name = "cosmetics/brand_list.html"
     paginate_by = 8
 
     def get_context_data(self, *, object_list=None, **kwargs):
@@ -81,8 +79,6 @@ class BrandDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 class ProductListView(LoginRequiredMixin, generic.ListView):
     model = Product
-    context_object_name = "product_list"
-    template_name = "cosmetics/product_list.html"
     paginate_by = 4
 
     def get_context_data(self, *, object_list=None, **kwargs):
