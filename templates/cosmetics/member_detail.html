@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Member detail{% endblock %}
+
+{% block content %}
+<div>
+  <h1 class="custom-40px-padding-bottom">Username: {{ member.username }}</h1>
+  <div>
+    <a href="{% url 'cosmetics:member-update' pk=member.id%}" class="custom-update-delete"><img src="/static/icons/update.svg" alt=""></a>
+    <a href="{% url 'cosmetics:member-delete' pk=member.id%}" class="custom-update-delete"><img src="/static/icons/delete.svg" alt=""></a>
+  </div>
+</div>
+<div>
+  <p><strong>First name:</strong> {{ member.first_name }}</p>
+  <p><strong>Last name:</strong> {{ member.last_name }}</p>
+  <p><strong>Date of birth:</strong> {{ member.date_of_birth }}</p>
+  <p><strong>Is staff:</strong> {{ member.is_staff }}</p>
+  <strong>Favorite products:</strong>
+  {% for product in member.favorite_products.all %}
+    {{ product.name }}
+    {% empty %}
+    No favorite products yet.
+  {% endfor %}
+</div>
+{% endblock %}
