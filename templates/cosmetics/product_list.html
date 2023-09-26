@@ -16,7 +16,7 @@
       {% if product_list %}
         {% for product in product_list %}
           <div class="custom-data-table products">
-            <p><a href="#"><strong>{{ product.name }}</strong></a> by {{ product.brand.name }}</p>
+            <p><a href="{% url 'cosmetics:product-detail' pk=product.id%}"><strong>{{ product.name }}</strong></a> by {{ product.brand.name }}</p>
             <div>
               <a href="{% url 'cosmetics:product-update' pk=product.id%}" class="custom-update-delete"><img src="/static/icons/update.svg" alt=""></a>
               <a href="{% url 'cosmetics:product-delete' pk=product.id%}" class="custom-update-delete"><img src="/static/icons/delete.svg" alt=""></a>
