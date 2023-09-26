@@ -346,6 +346,10 @@ button {
     padding: 0 300px;
 }
 
+.custom-member-detail {
+    padding: 0 350px;
+}
+
 .custom-detail-top {
     align-items: center;
     display: flex;
