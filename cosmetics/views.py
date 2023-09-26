@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
@@ -171,6 +172,18 @@ class SkinTypeDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = SkinType
     template_name = "cosmetics/skin_type_confirm_delete.html"
     success_url = reverse_lazy("cosmetics:skin-type-list")
+
+
+@login_required
+def add_remove_favorite(request, pk):
+    member = Member.objects.get(id=request.user.id)
+    if (
+        Product.objects.get(id=pk) in member.favorite_products.all()
+    ):
+        member.favorite_products.remove(pk)
+    else:
+        member.favorite_products.add(pk)
+    return HttpResponseRedirect(reverse_lazy("cosmetics:product-detail", args=[pk]))
 
 
 def restricted_view(request):
