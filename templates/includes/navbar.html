@@ -6,7 +6,7 @@
       <li><a class="custom-nav-link {% if request.path == '/brands/' %}custom-nav-active{% endif %}" href="{% url 'cosmetics:brand-list' %}">Brands</a></li>
       <li><a class="custom-nav-link {% if request.path == '/products/' %}custom-nav-active{% endif %}" href="{% url 'cosmetics:product-list' %}">Products</a></li>
       <li><a class="custom-nav-link {% if request.path == '/skin_types/' %}custom-nav-active{% endif %}" href="{% url 'cosmetics:skin-type-list' %}">Skin Types</a></li>
-      <li><a class="custom-nav-link" href="#">Members</a></li>
+      <li><a class="custom-nav-link {% if request.path == '/members/' %}custom-nav-active{% endif %}" href="{% url 'cosmetics:member-list' %}">Members</a></li>
     </ul>
   </div>
   <div>
