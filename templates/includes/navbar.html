@@ -13,7 +13,7 @@
     <ul class="custom-nav-list">
       {% if user.is_authenticated %}
         <li>
-          <a class="custom-nav-link custom-nav-active" href="#">
+          <a class="custom-nav-link custom-nav-active" href="{% url 'cosmetics:member-detail' pk=user.id%}">
             <img class="custom-user-icon" src="/static/icons/user.svg" alt="user icon">
             {{ user.username }}
           </a>
