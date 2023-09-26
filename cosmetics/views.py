@@ -208,6 +208,11 @@ class MemberListView(LoginRequiredMixin, generic.ListView):
         return queryset
 
 
+class MemberDetailView(LoginRequiredMixin, generic.DetailView):
+    model = Member
+    queryset = Member.objects.all()
+
+
 class MemberCreateView(LoginRequiredMixin, generic.CreateView):
     model = Member
     form_class = MemberCreationForm
