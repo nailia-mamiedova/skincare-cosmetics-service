@@ -50,6 +50,10 @@ p {
     margin: 0;
 }
 
+button {
+    all: unset;
+}
+
 .custom-nav {
     background-color: #FFD3E6;
     padding: 20px 200px;
@@ -119,6 +123,7 @@ p {
     align-items: center;
     text-align: center;
     padding: 60px 200px;
+    margin-bottom: 60px;
 }
 
 .custom-40px-padding-bottom {
@@ -242,6 +247,15 @@ p {
 .custom-submit-button:hover {
     background-color: #9B2D50;
     color: #fff;
+}
+
+.custom-cancel-button {
+    margin-left: 10px;
+    background-color: #FFD3E6;
+    color: #9B2D50;
+    border: 1px solid #FFD3E6;
+    border-radius: 10px;
+    padding: 10px 20px;
 }
 
 .custom-pagination {
