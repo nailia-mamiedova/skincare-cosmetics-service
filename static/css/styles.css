@@ -341,3 +341,21 @@ button {
 .custom-form {
     padding: 0 400px;
 }
+
+.custom-product-detail {
+    padding: 0 300px;
+}
+
+.custom-detail-top {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.custom-detail-content {
+    text-align: left;
+}
+
+.custom-detail-el:not(:last-child) {
+    padding-bottom: 10px;
+}
