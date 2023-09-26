@@ -99,7 +99,7 @@ class ProductListView(LoginRequiredMixin, generic.ListView):
         return context
 
     def get_queryset(self):
-        queryset = Product.objects.all()
+        queryset = Product.objects.all().prefetch_related("brand")
         form = ProductSearchForm(self.request.GET)
 
         if form.is_valid():
@@ -210,7 +210,7 @@ class MemberListView(LoginRequiredMixin, generic.ListView):
 
 class MemberDetailView(LoginRequiredMixin, generic.DetailView):
     model = Member
-    queryset = Member.objects.all()
+    queryset = Member.objects.all().prefetch_related("favorite_products__brand")
 
 
 class MemberCreateView(LoginRequiredMixin, generic.CreateView):
