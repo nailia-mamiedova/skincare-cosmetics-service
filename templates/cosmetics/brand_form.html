@@ -4,7 +4,7 @@
 {% block title %} {{ object|yesno:"Update,Add" }} brand {% endblock %}
 
 {% block content %}
-<div class="">
+<div class="custom-form">
   <h1 class="custom-40px-padding-bottom">{{ object|yesno:"Update,Add" }} brand</h1>
   <form action="" method="post" novalidate>
     {% csrf_token %}

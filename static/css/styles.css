@@ -337,3 +337,7 @@ button {
     text-align: left;
     margin-top: 10px;
 }
+
+.custom-form {
+    padding: 0 400px;
+}
