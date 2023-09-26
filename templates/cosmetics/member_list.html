@@ -16,7 +16,7 @@
       {% if member_list %}
         {% for member in member_list %}
           <div class="custom-data-table">
-            <p><a href="#"><strong>{{ member.username }} {% if user == member %} (Me){% endif %}</strong></a> ({{ member.first_name }} {{ member.last_name }})</p>
+            <p><a href="{% url 'cosmetics:member-detail' pk=member.id%}"><strong>{{ member.username }} {% if user == member %} (Me){% endif %}</strong></a> ({{ member.first_name }} {{ member.last_name }})</p>
             <div>
               <a href="{% url 'cosmetics:member-update' pk=member.id%}" class="custom-update-delete"><img src="/static/icons/update.svg" alt=""></a>
               <a href="{% url 'cosmetics:member-delete' pk=member.id%}" class="custom-update-delete"><img src="/static/icons/delete.svg" alt=""></a>
