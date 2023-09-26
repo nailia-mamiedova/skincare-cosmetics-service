@@ -36,6 +36,25 @@ class MemberCreationForm(UserCreationForm):
         return validate_date_of_birth(self.cleaned_data["date_of_birth"])
 
 
+class MemberUpdateForm(forms.ModelForm):
+    date_of_birth = forms.DateField(
+        help_text="Enter the date in the format: YYYY-MM-DD."
+    )
+
+    class Meta:
+        model = Member
+        fields = (
+            "username",
+            "first_name",
+            "last_name",
+            "date_of_birth",
+            "skin_type",
+        )
+
+    def clean_date_of_birth(self):
+        return validate_date_of_birth(self.cleaned_data["date_of_birth"])
+
+
 class BrandSearchForm(forms.Form):
     name = forms.CharField(
         max_length=255,
