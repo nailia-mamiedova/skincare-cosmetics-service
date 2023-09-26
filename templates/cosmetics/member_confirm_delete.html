@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Delete member{% endblock %}
+
+{% block content %}
+<div>
+  <h1 class="custom-40px-padding-bottom">Delete member?</h1>
+  <form action="" method="post">
+    {% csrf_token %}
+    <p class="custom-30px-padding-bottom">Are you sure you want to delete member -
+      <strong>{{ object.username }}</strong> ({{ object.first_name }} {{ object.last_name }})?</p>
+    <input type="submit" value="Yes, delete" class="custom-submit-button">
+    <input type="button" value="No, cancel" class="custom-cancel-button" onclick="window.location.href='{% url 'cosmetics:member-list' %}'">
+  </form>
+</div>
+{% endblock %}
