@@ -174,6 +174,11 @@ class SkinTypeDeleteView(LoginRequiredMixin, generic.DeleteView):
     success_url = reverse_lazy("cosmetics:skin-type-list")
 
 
+class MemberListView(LoginRequiredMixin, generic.ListView):
+    model = Member
+    paginate_by = 8
+
+
 @login_required
 def add_remove_favorite(request, pk):
     member = Member.objects.get(id=request.user.id)
