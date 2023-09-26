@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Product detail{% endblock %}
+
+{% block content %}
+<div class="custom-30px-padding-bottom">
+<h1>{{ product.name }}</h1>
+<div>
+    <a href="{% url 'cosmetics:product-update' pk=product.id%}" class="custom-update-delete"><img src="/static/icons/update.svg" alt=""></a>
+    <a href="{% url 'cosmetics:product-delete' pk=product.id%}" class="custom-update-delete"><img src="/static/icons/delete.svg" alt=""></a>
+  </div>
+  </div>
+<div class="custom-40px-padding-bottom test-1">
+  <div>
+  {% if product in user.favorite_products.all %}
+      <a href="#" class="custom-submit-button">
+        Delete from my favorites
+      </a>
+  {% else %}
+      <a href="#" class="custom-add-button">
+        Add to my favorites
+      </a>
+  {% endif %}
+  </div>
+</div>
+  <div>
+    <p><strong>Brand:</strong> {{ product.brand.name }}</p>
+    <p><strong>Skin types:</strong>
+      {% for skin_type in product.skin_types.all %}
+        {{ skin_type.name }},
+      {% endfor %}
+    </p>
+    <p><strong>Ingredients:</strong> {{ product.ingredients }}</p>
+    <p><strong>Description:</strong> {{ product.description }}</p>
+  </div>
+{% endblock %}
