@@ -11,6 +11,7 @@ from .forms import (
     SkinTypeSearchForm,
     MemberSearchForm,
     MemberCreationForm,
+    MemberUpdateForm,
 )
 from .models import Brand, Product, SkinType, Member
 
@@ -210,6 +211,17 @@ class MemberListView(LoginRequiredMixin, generic.ListView):
 class MemberCreateView(LoginRequiredMixin, generic.CreateView):
     model = Member
     form_class = MemberCreationForm
+
+
+class MemberUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Member
+    form_class = MemberUpdateForm
+    success_url = reverse_lazy("cosmetics:member-list")
+
+
+class MemberDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Member
+    success_url = reverse_lazy("cosmetics:member-list")
 
 
 @login_required
