@@ -10,6 +10,7 @@
     <p class="custom-30px-padding-bottom">Are you sure you want to delete product -
       <strong>{{ object.name }}</strong> by {{ object.brand.name }}?</p>
     <input type="submit" value="Yes, delete" class="custom-submit-button">
+    <input type="button" value="No, cancel" class="custom-cancel-button" onclick="window.location.href='{% url 'cosmetics:product-list' %}'">
   </form>
 </div>
 {% endblock %}
