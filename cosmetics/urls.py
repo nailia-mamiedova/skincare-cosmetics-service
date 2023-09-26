@@ -17,6 +17,9 @@ from .views import (
     SkinTypeUpdateView,
     SkinTypeDeleteView,
     MemberListView,
+    MemberCreateView,
+    MemberDeleteView,
+    MemberUpdateView,
 )
 
 urlpatterns = [
@@ -37,6 +40,9 @@ urlpatterns = [
     path("skin_types/<int:pk>/update/", SkinTypeUpdateView.as_view(), name="skin-type-update"),
     path("skin_types/<int:pk>/delete/", SkinTypeDeleteView.as_view(), name="skin-type-delete"),
     path("members/", MemberListView.as_view(), name="member-list"),
+    path("members/create/", MemberCreateView.as_view(), name="member-create"),
+    path("members/<int:pk>/delete/", MemberDeleteView.as_view(), name="member-delete"),
+    path("members/<int:pk>/update/", MemberUpdateView.as_view(), name="member-update"),
 ]
 
 app_name = "cosmetics"
