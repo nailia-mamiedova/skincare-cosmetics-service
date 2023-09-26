@@ -10,6 +10,7 @@ from .forms import (
     ProductSearchForm,
     SkinTypeSearchForm,
     MemberSearchForm,
+    MemberCreationForm,
 )
 from .models import Brand, Product, SkinType, Member
 
@@ -204,6 +205,11 @@ class MemberListView(LoginRequiredMixin, generic.ListView):
             )
 
         return queryset
+
+
+class MemberCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Member
+    form_class = MemberCreationForm
 
 
 @login_required
