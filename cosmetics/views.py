@@ -102,6 +102,11 @@ class ProductListView(LoginRequiredMixin, generic.ListView):
         return queryset
 
 
+class ProductDetailView(LoginRequiredMixin, generic.DetailView):
+    model = Product
+    queryset = Product.objects.all()
+
+
 class ProductCreateView(LoginRequiredMixin, generic.CreateView):
     model = Product
     fields = "__all__"
