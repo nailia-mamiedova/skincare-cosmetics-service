@@ -7,7 +7,11 @@ from .models import Brand, SkinType, Product, Member
 class MemberAdmin(UserAdmin):
     list_display = UserAdmin.list_display + ("date_of_birth", "skin_type")
     fieldsets = UserAdmin.fieldsets + (
-        (("Additional info", {"fields": ("date_of_birth", "skin_type", "favorite_products")}),)
+        (("Additional info", {"fields": (
+            "date_of_birth",
+            "skin_type",
+            "favorite_products"
+        )}),)
     )
     add_fieldsets = UserAdmin.add_fieldsets + (
         (

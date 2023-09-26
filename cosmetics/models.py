@@ -39,7 +39,9 @@ class Product(models.Model):
 
 class Member(AbstractUser):
     date_of_birth = models.DateField(null=True)
-    skin_type = models.ForeignKey(SkinType, on_delete=models.CASCADE, null=True)
+    skin_type = models.ForeignKey(
+        SkinType, on_delete=models.CASCADE, null=True
+    )
     favorite_products = models.ManyToManyField(Product, related_name="members")
 
     class Meta:

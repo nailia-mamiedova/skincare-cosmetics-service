@@ -210,7 +210,9 @@ class MemberListView(LoginRequiredMixin, generic.ListView):
 
 class MemberDetailView(LoginRequiredMixin, generic.DetailView):
     model = Member
-    queryset = Member.objects.all().prefetch_related("favorite_products__brand")
+    queryset = Member.objects.all().prefetch_related(
+        "favorite_products__brand"
+    )
 
 
 class MemberCreateView(LoginRequiredMixin, generic.CreateView):
@@ -238,7 +240,9 @@ def add_remove_favorite(request, pk):
         member.favorite_products.remove(pk)
     else:
         member.favorite_products.add(pk)
-    return HttpResponseRedirect(reverse_lazy("cosmetics:product-detail", args=[pk]))
+    return HttpResponseRedirect(
+        reverse_lazy("cosmetics:product-detail", args=[pk])
+    )
 
 
 def restricted_view(request):
