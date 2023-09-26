@@ -6,7 +6,7 @@
   <h1>Members</h1>
   <div class="custom-40px-padding-bottom custom-head">
     {% include "includes/search_form.html" %}
-    <a class="custom-add-button" href="#">
+    <a class="custom-add-button" href="{% url 'cosmetics:member-create' %}">
       Add new
     </a>
   </div>
@@ -18,8 +18,8 @@
           <div class="custom-data-table">
             <p><a href="#"><strong>{{ member.username }} {% if user == member %} (Me){% endif %}</strong></a> ({{ member.first_name }} {{ member.last_name }})</p>
             <div>
-              <a href="#" class="custom-update-delete"><img src="/static/icons/update.svg" alt=""></a>
-              <a href="#" class="custom-update-delete"><img src="/static/icons/delete.svg" alt=""></a>
+              <a href="{% url 'cosmetics:member-update' pk=member.id%}" class="custom-update-delete"><img src="/static/icons/update.svg" alt=""></a>
+              <a href="{% url 'cosmetics:member-delete' pk=member.id%}" class="custom-update-delete"><img src="/static/icons/delete.svg" alt=""></a>
             </div>
           </div>
         {% endfor %}
