@@ -5,7 +5,12 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
 
-from .forms import BrandSearchForm, ProductSearchForm, SkinTypeSearchForm
+from .forms import (
+    BrandSearchForm,
+    ProductSearchForm,
+    SkinTypeSearchForm,
+    MemberSearchForm,
+)
 from .models import Brand, Product, SkinType, Member
 
 
@@ -177,6 +182,28 @@ class SkinTypeDeleteView(LoginRequiredMixin, generic.DeleteView):
 class MemberListView(LoginRequiredMixin, generic.ListView):
     model = Member
     paginate_by = 8
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(MemberListView, self).get_context_data(**kwargs)
+
+        username = self.request.GET.get("username", "")
+
+        context["search_form"] = MemberSearchForm(initial={
+            "username": username,
+        })
+
+        return context
+
+    def get_queryset(self):
+        queryset = Member.objects.all()
+        form = MemberSearchForm(self.request.GET)
+
+        if form.is_valid():
+            return queryset.filter(
+                username__icontains=form.cleaned_data["username"],
+            )
+
+        return queryset
 
 
 @login_required
