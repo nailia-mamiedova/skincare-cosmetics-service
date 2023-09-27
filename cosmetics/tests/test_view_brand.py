@@ -26,3 +26,15 @@ class PrivateBrandListTest(TestCase):
         res = self.client.get(BRAND_LIST_URL)
 
         self.assertEquals(res.status_code, 200)
+
+    def test_retrieve_brand_list(self):
+        Brand.objects.create(name="BrandName", country="CountryName")
+        Brand.objects.create(name="BrandName2", country="CountryName2")
+        response = self.client.get(BRAND_LIST_URL)
+        brands = Brand.objects.all()
+
+        self.assertEquals(response.status_code, 200)
+        self.assertEquals(
+            list(response.context["brand_list"]),
+            list(brands))
+        self.assertTemplateUsed(response, "cosmetics/brand_list.html")
