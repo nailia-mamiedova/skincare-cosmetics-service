@@ -27,3 +27,15 @@ class ModelTests(TestCase):
             date_of_birth=date(2000, 1, 1),
             skin_type=cls.skin_type,
         )
+
+    def test_brand_str(self):
+        self.assertEqual(str(self.brand), "BrandName (CountryName)")
+
+    def test_skin_type_str(self):
+        self.assertEqual(str(self.skin_type), "Oily")
+
+    def test_product_str(self):
+        self.assertEqual(str(self.product), "BrandName ProductName")
+
+    def test_member_str(self):
+        self.assertEqual(str(self.member), "testuser (FirstName LastName)")
