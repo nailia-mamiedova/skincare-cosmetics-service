@@ -48,9 +48,11 @@ class BrandListView(LoginRequiredMixin, generic.ListView):
 
         name = self.request.GET.get("name", "")
 
-        context["search_form"] = BrandSearchForm(initial={
-            "name": name,
-        })
+        context["search_form"] = BrandSearchForm(
+            initial={
+                "name": name,
+            }
+        )
 
         return context
 
@@ -92,9 +94,11 @@ class ProductListView(LoginRequiredMixin, generic.ListView):
 
         name = self.request.GET.get("name", "")
 
-        context["search_form"] = ProductSearchForm(initial={
-            "name": name,
-        })
+        context["search_form"] = ProductSearchForm(
+            initial={
+                "name": name,
+            }
+        )
 
         return context
 
@@ -143,9 +147,11 @@ class SkinTypeListView(LoginRequiredMixin, generic.ListView):
 
         name = self.request.GET.get("name", "")
 
-        context["search_form"] = SkinTypeSearchForm(initial={
-            "name": name,
-        })
+        context["search_form"] = SkinTypeSearchForm(
+            initial={
+                "name": name,
+            }
+        )
 
         return context
 
@@ -190,9 +196,11 @@ class MemberListView(LoginRequiredMixin, generic.ListView):
 
         username = self.request.GET.get("username", "")
 
-        context["search_form"] = MemberSearchForm(initial={
-            "username": username,
-        })
+        context["search_form"] = MemberSearchForm(
+            initial={
+                "username": username,
+            }
+        )
 
         return context
 
@@ -234,9 +242,7 @@ class MemberDeleteView(LoginRequiredMixin, generic.DeleteView):
 @login_required
 def add_remove_favorite(request, pk):
     member = Member.objects.get(id=request.user.id)
-    if (
-        Product.objects.get(id=pk) in member.favorite_products.all()
-    ):
+    if Product.objects.get(id=pk) in member.favorite_products.all():
         member.favorite_products.remove(pk)
     else:
         member.favorite_products.add(pk)
@@ -246,4 +252,4 @@ def add_remove_favorite(request, pk):
 
 
 def restricted_view(request):
-    return render(request, 'cosmetics/restricted.html')
+    return render(request, "cosmetics/restricted.html")

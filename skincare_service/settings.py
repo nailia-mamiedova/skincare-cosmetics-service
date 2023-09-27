@@ -63,8 +63,7 @@ ROOT_URLCONF = "skincare_service.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / 'templates']
-        ,
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -77,7 +76,7 @@ TEMPLATES = [
     },
 ]
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 WSGI_APPLICATION = "skincare_service.wsgi.application"
 
@@ -119,7 +118,7 @@ AUTH_USER_MODEL = "cosmetics.Member"
 
 LOGIN_REDIRECT_URL = "/"
 
-LOGIN_URL = '/restricted/'
+LOGIN_URL = "/restricted/"
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/

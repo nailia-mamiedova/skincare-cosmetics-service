@@ -45,4 +45,7 @@ class SkinTypeAdmin(admin.ModelAdmin):
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     search_fields = ("name",)
-    list_filter = ("brand__name", "skin_types",)
+    list_filter = (
+        "brand__name",
+        "skin_types",
+    )

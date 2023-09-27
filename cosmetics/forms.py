@@ -20,7 +20,7 @@ class MemberCreationForm(UserCreationForm):
     date_of_birth = forms.DateField(
         required=False,
         validators=[validate_date_of_birth],
-        help_text="Enter the date in the format: YYYY-MM-DD."
+        help_text="Enter the date in the format: YYYY-MM-DD.",
     )
 
     class Meta(UserCreationForm.Meta):
@@ -60,7 +60,7 @@ class BrandSearchForm(forms.Form):
         max_length=255,
         required=False,
         label="",
-        widget=forms.TextInput(attrs={"placeholder": "Search by name"})
+        widget=forms.TextInput(attrs={"placeholder": "Search by name"}),
     )
 
 
@@ -69,7 +69,7 @@ class ProductSearchForm(forms.Form):
         max_length=255,
         required=False,
         label="",
-        widget=forms.TextInput(attrs={"placeholder": "Search by name"})
+        widget=forms.TextInput(attrs={"placeholder": "Search by name"}),
     )
 
 
@@ -78,7 +78,7 @@ class SkinTypeSearchForm(forms.Form):
         max_length=255,
         required=False,
         label="",
-        widget=forms.TextInput(attrs={"placeholder": "Search by name"})
+        widget=forms.TextInput(attrs={"placeholder": "Search by name"}),
     )
 
 
@@ -87,5 +87,5 @@ class MemberSearchForm(forms.Form):
         max_length=255,
         required=False,
         label="",
-        widget=forms.TextInput(attrs={"placeholder": "Search by username"})
+        widget=forms.TextInput(attrs={"placeholder": "Search by username"}),
     )
