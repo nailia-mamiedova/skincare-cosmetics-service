@@ -54,7 +54,9 @@ class AdminSiteTests(TestCase):
         url = reverse("admin:cosmetics_member_changelist")
         response = self.client.get(url)
 
-        self.assertContains(response, self.member.date_of_birth.strftime("%b. %-d, %Y"))
+        self.assertContains(
+            response, self.member.date_of_birth.strftime("%b. %-d, %Y")
+        )
 
     def test_member_detailed_date_of_birth_listed(self):
         url = reverse("admin:cosmetics_member_change", args=[self.member.id])
