@@ -1,0 +1,32 @@
+from datetime import date
+
+from django.contrib.auth import get_user_model
+from django.test import TestCase
+
+from cosmetics.models import SkinType, Product, Brand
+
+
+class AdminSiteTests(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        cls.admin_user = get_user_model().objects.create_superuser(
+            username="admin",
+            password="admin12345"
+        )
+        cls.skin_type = SkinType.objects.create(name="Oily Skin")
+        cls.brand = Brand.objects.create(name="The Ordinary")
+        cls.product = Product.objects.create(
+            name="Niacinamide 10% + Zinc 1%",
+            brand=cls.brand,
+        )
+
+    def setUp(self) -> None:
+        self.client.force_login(self.admin_user)
+        self.member = get_user_model().objects.create_user(
+            username="member",
+            password="member12345",
+            date_of_birth=date(2002, 2, 2),
+        )
+        self.member.favorite_products.add(self.product)
+        self.member.skin_type = self.skin_type
+        self.member.save()
