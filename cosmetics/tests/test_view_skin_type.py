@@ -26,3 +26,20 @@ class PrivateSkinTypeListTest(TestCase):
         res = self.client.get(SKIN_TYPE_LIST_URL)
 
         self.assertEquals(res.status_code, 200)
+
+    def test_retrieve_skin_type_list(self):
+        SkinType.objects.create(
+            name="Oily Skin", description="Oily skin type description"
+        )
+        SkinType.objects.create(
+            name="Normal Skin", description="Normal skin type description"
+        )
+        response = self.client.get(SKIN_TYPE_LIST_URL)
+        skin_types = SkinType.objects.all()
+
+        self.assertEquals(response.status_code, 200)
+        self.assertEquals(
+            list(response.context["skin_type_list"]),
+            list(skin_types)
+        )
+        self.assertTemplateUsed(response, "cosmetics/skin_type_list.html")
