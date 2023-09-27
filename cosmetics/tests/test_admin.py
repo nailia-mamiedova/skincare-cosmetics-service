@@ -2,6 +2,7 @@ from datetime import date
 
 from django.contrib.auth import get_user_model
 from django.test import TestCase
+from django.urls import reverse
 
 from cosmetics.models import SkinType, Product, Brand
 
@@ -30,3 +31,15 @@ class AdminSiteTests(TestCase):
         self.member.favorite_products.add(self.product)
         self.member.skin_type = self.skin_type
         self.member.save()
+
+    def test_member_skin_type_listed(self):
+        url = reverse("admin:cosmetics_member_changelist")
+        response = self.client.get(url)
+
+        self.assertContains(response, self.skin_type)
+
+    def test_member_skin_type_detailed(self):
+        url = reverse("admin:cosmetics_member_change", args=[self.member.id])
+        response = self.client.get(url)
+
+        self.assertContains(response, self.skin_type)
