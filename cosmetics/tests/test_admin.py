@@ -43,3 +43,9 @@ class AdminSiteTests(TestCase):
         response = self.client.get(url)
 
         self.assertContains(response, self.skin_type)
+
+    def test_member_favorite_products_detailed(self):
+        url = reverse("admin:cosmetics_member_change", args=[self.member.id])
+        response = self.client.get(url)
+
+        self.assertContains(response, self.product)
