@@ -39,3 +39,9 @@ class ModelTests(TestCase):
 
     def test_member_str(self):
         self.assertEqual(str(self.member), "testuser (FirstName LastName)")
+
+    def test_get_absolute_url(self):
+        self.assertEqual(
+            self.member.get_absolute_url(),
+            f"/members/{self.member.pk}/detail/"
+        )
