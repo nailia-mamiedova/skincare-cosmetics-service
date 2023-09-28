@@ -64,3 +64,9 @@ Ensure you have the following installed on your local machine:
     ```python manage.py runserver```
 
 The application will start running on http://127.0.0.1:8000/.
+
+## Login Credentials
+
+After migrating you can use these default credentials for login or create new superuser:
+- **Username:** admin
+- **Password:** admin
