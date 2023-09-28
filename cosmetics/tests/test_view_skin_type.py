@@ -29,10 +29,10 @@ class PrivateSkinTypeListTest(TestCase):
 
     def test_retrieve_skin_type_list(self):
         SkinType.objects.create(
-            name="Oily Skin", description="Oily skin type description"
+            name="Skin Type", description="Skin Type type description"
         )
         SkinType.objects.create(
-            name="Normal Skin", description="Normal skin type description"
+            name="Skin Type 2", description="Skin Type description"
         )
         response = self.client.get(SKIN_TYPE_LIST_URL)
         skin_types = SkinType.objects.all()

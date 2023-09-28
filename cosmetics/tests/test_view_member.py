@@ -24,7 +24,7 @@ class PrivateMemberListTest(TestCase):
 
     def test_create_member(self):
         skin_type = SkinType.objects.create(
-            name="Oily Skin", description="Oily skin type description"
+            name="Skin Type", description="Skin Type description"
         )
         form_data = {
             "username": "member_test",

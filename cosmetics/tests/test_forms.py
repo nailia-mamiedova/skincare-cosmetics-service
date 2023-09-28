@@ -7,7 +7,7 @@ from cosmetics.models import SkinType
 class MemberFormTest(TestCase):
     @classmethod
     def setUpTestData(cls):
-        cls.skin_type = SkinType.objects.create(name="Oily Skin")
+        cls.skin_type = SkinType.objects.create(name="Skin Type")
 
     def test_member_creation_form_is_valid(self):
         form_data = {

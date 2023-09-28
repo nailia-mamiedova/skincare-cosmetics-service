@@ -11,10 +11,10 @@ class AdminSiteTests(TestCase):
     @classmethod
     def setUpTestData(cls):
         cls.admin_user = get_user_model().objects.create_superuser(
-            username="admin",
-            password="admin12345"
+            username="test_user",
+            password="test_password_12345"
         )
-        cls.skin_type = SkinType.objects.create(name="Oily Skin")
+        cls.skin_type = SkinType.objects.create(name="Skin Type")
         cls.brand = Brand.objects.create(name="The Ordinary")
         cls.product = Product.objects.create(
             name="Niacinamide 10% + Zinc 1%",
