@@ -36,7 +36,7 @@ class PrivateProductListTest(TestCase):
             description="Description",
         )
         response = self.client.get(PRODUCT_LIST_URL)
-        products = Product.objects.all()
+        products = Product.objects.all()[:4]
 
         self.assertEquals(response.status_code, 200)
         self.assertEquals(

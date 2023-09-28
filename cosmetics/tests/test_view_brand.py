@@ -31,7 +31,7 @@ class PrivateBrandListTest(TestCase):
         Brand.objects.create(name="BrandName", country="CountryName")
         Brand.objects.create(name="BrandName2", country="CountryName2")
         response = self.client.get(BRAND_LIST_URL)
-        brands = Brand.objects.all()
+        brands = Brand.objects.all()[:8]
 
         self.assertEquals(response.status_code, 200)
         self.assertEquals(

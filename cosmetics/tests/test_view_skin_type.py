@@ -35,7 +35,7 @@ class PrivateSkinTypeListTest(TestCase):
             name="Skin Type 2", description="Skin Type description"
         )
         response = self.client.get(SKIN_TYPE_LIST_URL)
-        skin_types = SkinType.objects.all()
+        skin_types = SkinType.objects.all()[:4]
 
         self.assertEquals(response.status_code, 200)
         self.assertEquals(
