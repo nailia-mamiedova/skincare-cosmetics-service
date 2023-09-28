@@ -55,7 +55,7 @@ class AdminSiteTests(TestCase):
         response = self.client.get(url)
 
         self.assertContains(
-            response, self.member.date_of_birth.strftime("%b. %-d, %Y")
+            response, self.member.date_of_birth.strftime("%b. %d, %Y").replace(" 0", " ")
         )
 
     def test_member_detailed_date_of_birth_listed(self):
