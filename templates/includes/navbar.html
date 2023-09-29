@@ -1,0 +1,37 @@
+<nav class="custom-nav">
+  <a class="custom-logo" href="{% url 'cosmetics:index' %}">SkinCo</a>
+  <div>
+    <ul class="custom-nav-list">
+      <li><a class="custom-nav-link {% if request.path == '/' %}custom-nav-active{% endif %}" href="{% url 'cosmetics:index' %}">Home</a></li>
+      <li><a class="custom-nav-link {% if request.path == '/brands/' %}custom-nav-active{% endif %}" href="{% url 'cosmetics:brand-list' %}">Brands</a></li>
+      <li><a class="custom-nav-link {% if request.path == '/products/' %}custom-nav-active{% endif %}" href="{% url 'cosmetics:product-list' %}">Products</a></li>
+      <li><a class="custom-nav-link {% if request.path == '/skin_types/' %}custom-nav-active{% endif %}" href="{% url 'cosmetics:skin-type-list' %}">Skin Types</a></li>
+      <li><a class="custom-nav-link {% if request.path == '/members/' %}custom-nav-active{% endif %}" href="{% url 'cosmetics:member-list' %}">Members</a></li>
+    </ul>
+  </div>
+  <div>
+    <ul class="custom-nav-list">
+      {% if user.is_authenticated %}
+        <li>
+          <a class="custom-nav-link custom-nav-active" href="{% url 'cosmetics:member-detail' pk=user.id%}">
+            <img class="custom-user-icon" src="/static/icons/user.svg" alt="user icon">
+            {{ user.username }}
+          </a>
+        </li>
+        <li>
+          <a class="custom-nav-link" href="{% url 'logout'%}?next={{ requested.path}}">
+            Logout
+            <img class="custom-login-logout-icon" src="/static/icons/logout.svg" alt="logout icon">
+          </a>
+        </li>
+      {% else %}
+        <li>
+          <a class="custom-nav-link" href="{% url 'login'%}?next={{ requested.path }}">
+            Login
+            <img class="custom-login-logout-icon" src="/static/icons/login.svg" alt="login icon">
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>

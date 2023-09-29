@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Products{% endblock %}
+
+{% block content %}
+  <h1>Products</h1>
+  <div class="custom-40px-padding-bottom custom-head">
+    {% include "includes/search_form.html" %}
+    <a class="custom-add-button" href="{% url 'cosmetics:product-create' %}">
+      Add new
+    </a>
+  </div>
+
+  <div class="custom-30px-padding-bottom">
+    <div class="custom-table">
+      {% if product_list %}
+        {% for product in product_list %}
+          <div class="custom-data-table products">
+            <p><a href="{% url 'cosmetics:product-detail' pk=product.id%}"><strong>{{ product.name }}</strong></a> by {{ product.brand.name }}</p>
+            <div>
+              <a href="{% url 'cosmetics:product-update' pk=product.id%}" class="custom-update-delete"><img src="/static/icons/update.svg" alt=""></a>
+              <a href="{% url 'cosmetics:product-delete' pk=product.id%}" class="custom-update-delete"><img src="/static/icons/delete.svg" alt=""></a>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="">No products have been added yet.</div>
+      {% endif%}
+    </div>
+  </div>
+{% endblock %}

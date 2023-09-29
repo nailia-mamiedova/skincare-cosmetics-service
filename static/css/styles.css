@@ -1,0 +1,365 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul, ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 32px;
+    margin: 0;
+    color: #C73B65;
+}
+
+h2 {
+    font-weight: 800;
+    font-size: 26px;
+    margin: 0;
+    color: #C73B65;
+}
+
+h3 {
+    font-weight: 800;
+    font-size: 20px;
+    margin: 0;
+    color: #C73B65;
+}
+
+strong {
+    font-weight: 800;
+    color: #C73B65;
+}
+
+p {
+    font-weight: 400;
+    font-size: 16px;
+    margin: 0;
+}
+
+button {
+    all: unset;
+}
+
+.custom-nav {
+    background-color: #FFD3E6;
+    padding: 20px 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.custom-logo {
+    font-weight: 800;
+    font-size: 32px;
+    color: #C73B65;
+}
+
+.custom-logo:hover {
+    color: #9B2D50;
+}
+
+.custom-nav-list {
+    list-style: none;
+    display: flex;
+    gap: 60px;
+}
+
+.custom-nav-link {
+    font-weight: 500;
+    font-size: 16px;
+    color: #C73B65;
+    display: flex;
+    align-items: center;
+}
+
+.custom-nav-link:hover {
+    transform: scale(1.05);
+    color: #9B2D50;
+}
+
+.custom-nav-active {
+    font-weight: 800;
+}
+
+.custom-user-icon {
+    margin-right: 10px;
+}
+
+.custom-login-logout-icon {
+    margin-left: 10px;
+}
+
+.custom-footer {
+    background-color: #C73B65;
+    width: 100%;
+    padding: 20px 200px;
+    bottom: 0;
+    position: fixed;
+    text-align: center;
+}
+
+.custom-footer-text {
+    font-weight: 400;
+    font-size: 14px;
+    color: #FFD3E6;
+}
+
+.custom-content-block {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 200px;
+    margin-bottom: 60px;
+}
+
+.custom-40px-padding-bottom {
+    padding-bottom: 40px;
+}
+
+.custom-30px-padding-bottom {
+    padding-bottom: 30px;
+}
+
+.custom-20px-padding-bottom {
+    padding-bottom: 20px;
+}
+
+.custom-statistics {
+    border-radius: 10px;
+    display: flex;
+    width: 50%;
+    margin: 0 auto;
+    box-shadow: 0 3px 15px #FFD3E6;
+}
+
+.statistics-cell {
+    margin: 20px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.statistics-divider {
+    width: 1px;
+    background-color: #FFD3E6;
+    height: auto;
+}
+
+.custom-stat-num {
+    margin-right: 10px;
+}
+
+.custom-list-element:not(:last-child) {
+    padding-bottom: 10px;
+}
+
+.custom-login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 450px;
+    width: 100%;
+    background: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px #FFD3E6;
+}
+
+.custom-login-form{
+    padding: 50px 40px;
+}
+
+.custom-login-form header{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.custom-login-form input{
+    height: 60px;
+    width: 100%;
+    padding: 0 15px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #DDD;
+    border-radius: 6px;
+    outline: none;
+}
+
+.custom-login-form input.button{
+    color: #FFF;
+    background: #C73B65;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin: 20px 0 0 0;
+}
+
+.custom-login-form input.button:hover{
+    background: #9B2D50;
+}
+
+.custom-table {
+    border-radius: 10px;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.custom-data-table {
+    border-radius: 10px;
+    border: 1px solid #FFD3E6;
+    flex: 1 1 calc(50% - 20px);
+    padding: 20px 50px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.custom-data-table.products {
+    flex: 100%;
+}
+
+.custom-submit-button {
+    background-color: #C73B65;
+    color: #fff;
+    border: 1px solid #C73B65;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.custom-submit-button:hover {
+    background-color: #9B2D50;
+    color: #fff;
+}
+
+.custom-cancel-button {
+    margin-left: 10px;
+    background-color: #FFD3E6;
+    color: #9B2D50;
+    border: 1px solid #FFD3E6;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.custom-pagination {
+    display: flex;
+    justify-content: right;
+    margin-right: 10px;
+}
+
+.page-link {
+    padding: 8px 12px;
+    height: 100%;
+    border: 1px solid #C73B65;
+}
+
+.page-link:hover {
+    border: 1px solid #C73B65;
+    background-color: #FFD3E6;
+}
+
+.page-item.active .page-link {
+    font-weight: 800;
+    padding: 12px 20px;
+    border: 1px solid #C73B65;
+    background-color: #C73B65;
+}
+
+.custom-update-delete:first-child {
+     margin-right: 10px;
+}
+
+.custom-search-button {
+    padding: 6px 20px;
+    border: 1px solid #FFD3E6;
+    border-radius: 0 10px 10px 0;
+    background-color: #FFD3E6;
+}
+
+.custom-head {
+    margin: 0 10px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.custom-add-button {
+    color: #fff;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #C73B65;
+    border: 1px solid #C73B65;
+    align-items: center;
+}
+
+.custom-add-button:hover {
+    background-color: #9B2D50;
+    color: #fff;
+}
+
+.custom-skin-type-table {
+    border-radius: 10px;
+    border: 1px solid #FFD3E6;
+    padding: 20px 50px;
+    flex: 1 1 calc(50% - 20px);
+    align-items: center;
+    margin: 10px;
+}
+
+.skin-type-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #FFD3E6;
+}
+
+.skin-type-description {
+    text-align: left;
+    margin-top: 10px;
+}
+
+.custom-form {
+    padding: 0 400px;
+}
+
+.custom-product-detail {
+    padding: 0 300px;
+}
+
+.custom-member-detail {
+    padding: 0 350px;
+}
+
+.custom-detail-top {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.custom-detail-content {
+    text-align: left;
+}
+
+.custom-detail-el:not(:last-child) {
+    padding-bottom: 10px;
+}

@@ -1,0 +1,198 @@
+[
+    {
+        "model": "cosmetics.brand",
+        "pk": 1,
+        "fields": {"name": "Beauty of Joseon", "country": "South Korea"}
+    },
+    {
+        "model": "cosmetics.brand",
+        "pk": 2,
+        "fields": {"name": "Bioderma", "country": "France"}
+    },
+    {
+        "model": "cosmetics.brand",
+        "pk": 3,
+        "fields": {"name": "Purito", "country": "South Korea"}
+    },
+    {
+        "model": "cosmetics.brand",
+        "pk": 4,
+        "fields": {"name": "Dr.Ceuracle", "country": "South Korea"}
+    },
+    {
+        "model": "cosmetics.brand",
+        "pk": 5,
+        "fields": {"name": "MEDI-PEEL", "country": "South Korea"}
+    },
+    {
+        "model": "cosmetics.brand",
+        "pk": 6,
+        "fields": {"name": "Round Lab", "country": "South Korea"}
+    },
+    {
+        "model": "cosmetics.brand",
+        "pk": 7,
+        "fields": {"name": "La Roche-Posay", "country": "France"}
+    },
+    {
+        "model": "cosmetics.brand",
+        "pk": 8,
+        "fields": {"name": "Medik8", "country": "United Kingdom"}
+    },
+    {
+        "model": "cosmetics.brand",
+        "pk": 9,
+        "fields": {"name": "ISNTREE", "country": "South Korea"}
+    },
+    {
+        "model": "cosmetics.brand",
+        "pk": 10,
+        "fields": {"name": "Q+A", "country": "United Kingdom"}
+    },
+    {
+        "model": "cosmetics.brand",
+        "pk": 11,
+        "fields": {"name": "Paula's Choice", "country": "United States of America"}
+    },
+    {
+        "model": "cosmetics.skintype",
+        "pk": 1,
+        "fields": {
+            "name": "Oily Skin",
+            "description": "Oily skin is characterized by an excess of oil (sebum) production. This type may have enlarged pores, a shiny complexion, and is prone to acne and blemishes due to the overproduction of sebum."
+        }
+    },
+    {
+        "model": "cosmetics.skintype",
+        "pk": 2,
+        "fields": {
+            "name": "Normal Skin",
+            "description": "Not too dry and not too oily, normal skin usually has no or few imperfections, no severe sensitivity, and a radiant complexion. It has balanced levels of moisture, oil, and pigment."
+        }
+    },
+    {
+        "model": "cosmetics.skintype",
+        "pk": 3,
+        "fields": {
+            "name": "Sensitive Skin",
+            "description": "Sensitive skin can easily become dry, itchy, or irritated. It may have a red and inflamed appearance and can react negatively to certain cosmetic products or environmental conditions."
+        }
+    },
+    {
+        "model": "cosmetics.skintype",
+        "pk": 4,
+        "fields": {
+            "name": "Dry Skin",
+            "description": "Dry skin produces less sebum than normal skin, leading to a lack of moisture. It may feel tight, rough, and look dull. Dry skin can also be flaky, itchy, and show more lines."
+        }
+    },
+    {
+        "model": "cosmetics.skintype",
+        "pk": 5,
+        "fields": {
+            "name": "Combination Skin",
+            "description": "Combination skin is both dry and oily, often with an oily T-zone (forehead, nose, and chin) and dry cheeks and eyes. This type requires varied care for different facial areas."
+        }
+    },
+    {
+        "model": "cosmetics.skintype",
+        "pk": 7,
+        "fields": {
+            "name": "Mature Skin",
+            "description": "Mature or aging skin may have wrinkles, fine lines, and loss of elasticity. It often requires products that offer hydration, nourishment, and help in cell regeneration."
+        }
+    },
+    {
+        "model": "cosmetics.skintype",
+        "pk": 8,
+        "fields": {
+            "name": "Acne-Prone Skin",
+            "description": "Acne-prone skin tends to break out easily, with pimples, blackheads, and whiteheads. It requires products that control oil production and promote exfoliation."
+        }
+    },
+    {
+        "model": "cosmetics.skintype",
+        "pk": 9,
+        "fields": {
+            "name": "Pigmented Skin",
+            "description": " This skin type may have issues with hyperpigmentation, dark spots, or uneven skin tone, requiring products that target these issues to brighten and even out the skin tone."
+        }
+    },
+    {
+        "model": "cosmetics.product",
+        "pk": 1,
+        "fields": {
+            "name": "Glow Serum : Propolis+Niacinamide",
+            "brand": 1,
+            "ingredients": "Propolis Extract, Dipropylene Glycol, Glycerin, Butylene Glycol, Water, Niacinamide, 1,2-Hexanediol, Melia Azadirachta Flower Extract, Melia Azadirachta Leaf Extract, Sodium Hyaluronate, Curcuma Longa (Turmeric) Root Extract, Ocimum Sanctum Leaf Extract, Theobroma Cacao (Cocoa) Seed Extract, Melaleuca Alternifolia (Tea Tree) Extract, Centella Asiatica Extract, Corallina Officinalis Extract, Lotus Corniculatus Seed Extract, Calophyllum Inophyllum Seed Oil, Betaine Salicylate, Sodium Polyacryloyldimethyl Taurate, Tromethamine, Polyglyceryl-10 Laurate, Caprylyl Glycol, Ethylhexylglycerin, Dextrin, Pentylene Glycol, Octanediol, Tocopherol, Xanthan Gum, Carbomer",
+            "description": "Soothes and reduces inflammation;\r\nBrightens and makes the tone even, and the skin naturally radiant.",
+            "skin_types": [1, 5, 8, 9]
+        }
+    },
+    {
+        "model": "cosmetics.product",
+        "pk": 2,
+        "fields": {
+            "name": "Ginseng Essence Water",
+            "brand": 1,
+            "ingredients": "Panax Ginseng Root Water, Butylene Glycol, Glycerin, Propanediol, Niacinamide, 1,2-Hexanediol, Water, Hydroxyacetophenone, Glyceryl Glucoside, Xanthna Gum, Panthenol, Dipotassium Glycyrrhizate, Allantoin, Adenosine, Panax Ginseng Callus Culture Extract, Theobroma Cacao(Cocoa) Extract, Dextrin, Glucose, Panax Ginseng Root Extract, Panax Ginseng Berry Extract, Lactobacillus/Panax Ginseng Root Ferment Filtrate, Sodium Hyaluronate, Ethylhexyglycerin, Disodium EDTA",
+            "description": "Moisturizes and balances the skin",
+            "skin_types": []
+        }
+    },
+    {
+        "model": "cosmetics.product",
+        "pk": 3,
+        "fields": {
+            "name": "Relief Sun : Rice + Probiotics (SPF50+ PA++++)",
+            "brand": 1,
+            "ingredients": "Water, Oryza Sativa (Rice) Extract (30%), Dibutyl Adipate, Propanediol, Diethylamino Hydroxybenzoyl Hexyl Benzoate, Polymethylsilsesquioxane, Ethylhexyl Triazone, Niacinamide, Methylene Bis-benzotriazole Tetramethylbutylphenol, Coco-caprylate/Caprate, Caprylyl Methicone, Diethylhexyl Butamido Triazone, Glycerin, Butylene Glycol, Oryza Sativa (Rice) Germ Extract, Camellia Sinensis Leaf Extract, Lactobacillus/Pumpkin Ferment Extract, Bacillus/Soybean Ferment Extract, Saccharum Officinarum (Sugarcane) Extract, Macrocystis Pyrifera (Kelp) Extract, Cocos Nucifera (Coconut) Fruit Extract, Panax Ginseng Root Extract, Camellia Sinensis Leaf Extract, Monascus/Rice Ferment, Pentylene Glycol, Behenyl Alcohol, Poly C10-30 Alkyl Acrylate, Polyglyceryl-3 Methylglucose Distearate, Decyl Glucoside, Tromethamine, Carbomer, Acrylates/C10-30 Alkyl Acrylate Crosspolymer, 1,2-Hexanediol,Sodium Stearoyl Glutamate, Polyacrylate Crosspolymer-6, Ethylhexylglycerin, Adenosine, Xanthan Gum, Tocopherol, Lactobacillus/Rice Ferment, Aspergillus Ferment, Saccharomyces/Rice Ferment Filtrate",
+            "description": "Reliably protects against UVB and UVA radiation: results confirmed by independent laboratories in Korea and Spain;\r\nHas a comfortable texture, moisturizes the skin and can be used instead of day cream;\r\nSuitable for all skin types, best for combination;\r\nDoes not leave greasiness and white marks;\r\nNot tested on animals.",
+            "skin_types": [1]
+        }
+    },
+    {
+        "model": "cosmetics.product",
+        "pk": 4,
+        "fields": {
+            "name": "Crystal Retinal 3",
+            "brand": 8,
+            "ingredients": "Water, Caprylic/​Capric Triglyceride, Glycerin, Isododecane, Cetearyl Olivate, Sodium Acrylate/​Sodium Acryloyldimethyl Taurate Copolymer, Cetearyl Alcohol, PPG-12/​Smdi Copolymer, Sorbitan Olivate, Tocopheryl Acetate, Cyclodextrin, Squalane, Hydroxyethyl Acrylate/​Sodium Acryloyldimethyl Taurate Copolymer, Hydroxyacetophenone, 3-O-Ethyl Ascorbic Acid, Hydroxypropyl Methylcellulose, Sodium Hyaluronate, Phenoxyethanol, Tetrahexyldecyl Ascorbate, Daucus Carota Sativa (Carrot) Seed Oil, Retinal, Rubus Chamaemorus Seed Oil, Alumina, Isostearic Acid, Lecithin, Polyglyceryl-3 Polyricinoleate, Lonicera Japonica (Honeysuckle) Flower Extract, Lonicera Caprifolium (Honeysuckle) Flower Extract, Polyhydroxystearic Acid, Stearic Acid, Sodium Polyaspartate, Pentylene Glycol, Citric Acid, Polysorbate 60, Disodium EDTA, Ethylhexylglycerin, BHT, Sorbitan Isostearate, Vanilla Planifolia Fruit Extract, Dipteryx Odorata Bean Extract, Coumarin, Red 4, Titanium Dioxide/​Ci 77891",
+            "description": "To protect the skin from early aging, the appearance of wrinkles and dark circles, dryness, and peeling, signs of early aging - for this purpose, the unique cream-serum Medik8 Crystal Retinal 3 was created. The beauty product is rich in a special form of vitamin A and vitamin E, hyaluronic acid, antioxidants, plant extracts, and lecithin. As a result of the product, the skin acquires a healthy and youthful appearance, and protection against wrinkles, dehydration, and early aging.",
+            "skin_types": [1]
+        }
+    },
+    {
+        "model": "cosmetics.product",
+        "pk": 5,
+        "fields": {
+            "name": "TW-Real Eye Cream",
+            "brand": 9,
+            "ingredients": "Bifida Ferment Lysate, Dipropylene Glycol, Cyclopentasiloxane, Glycerin, Squalane, Hydrogenated Polydecene, Niacinamide, Pentaerythrityl Tetraethylhexanoate, Dimethicone, Cetearyl Alcohol, Arachidyl Alcohol, Shea Butter, C12-16 Alcohols, Carrot Extract, Glyceryl Stearate, Hydrogenated Lecithin, Stearyl Alcohol, Arachidyl Glucoside, Palmitic Acid, Tromethamine, Allantoin, Mango Seed Butter, Avocado Oil, Hydrogenated Vegetable Oil, Tocopherol, Hydroxyethylcellulose, SH-Polypeptide-1, Acetyl Hexapeptide-8, SH-Oligopeptide-1, SH-Oligopeptide-2, Ceramide NP, Astaxanthin, Adenosine, Ethyl Ascorbyl Ether, Dimethicone/​Vinyl Dimethicone Crosspolymer, Hydroxyethyl Acrylate/​Sodium Acryloyldimethyl Taurate Copolymer, Sodium Acrylate/​Sodium Acryloyldimethyl Taurate Copolymer, Isohexadecane, Sorbitan Oleate, Polysorbate 60, Caprylic/​Capric Triglyceride, Cholesterol, Deoxyphytantriyl Palmitamide Mea, Polyglyceryl-2 Stearate, Behenyl Alcohol, Erythritol, Carbomer, Polysorbate 80, 1,2-Hexanediol, Butylene Glycol, Disodium EDTA, Illicium Verum Fruit Extract, Scutellaria Baicalensis Root Extract",
+            "description": "Focusing on both Tone and Wrinkles (which is where the name comes from), this is an eye cream that truly lives up to its reputation!",
+            "skin_types": [1]
+        }
+    },
+    {
+        "model": "cosmetics.product",
+        "pk": 7,
+        "fields": {
+            "name": "Sensibio Lait Cleansing Milk",
+            "brand": 2,
+            "ingredients": "Water (Aqua), Glycerin, Ethylhexyl Palmitate, Mineral Oil (Paraffinum Liquidum), Polypropylene Terephthalate, Glycyrrhetinic Acid, Mannitol, Xylitol, Rhamnose, Fructooligosaccharides, Laminaria Ochroleuca Extract, Ammonium Acryloyldimethyltaurate/ Vp Copolymer, Pentylene Glycol, Ethylhexylglycerin, Disodium Edta, Caprylic/Capric Triglyceride, Sodium Hydroxide.",
+            "description": "18-Beta-Toleridine patented complex for sensitive skins increases the skin's tolerance level. Stronger, it is thus better protected against external attacks and becomes less reactive. Sensibo Cleansing milk perfectly cleanses and removes make-up from face and eyes.",
+            "skin_types": [3]
+        }
+    },
+    {
+        "model": "cosmetics.product",
+        "pk": 8,
+        "fields": {
+            "name": "Effaclar Ultra",
+            "brand": 7,
+            "ingredients": "Aqua/Water, Sodium Laureth Sulfate, Panthenol, Peg-200 Hydrogenated Glyceryl Palmate, Glycerin, Coco-Betaine, Sodium Chloride, Polysorbate 20, Peg-7 Glyceryl Cocoate, Citric Acid, Cocamide Mea, Copper Gluconate, Manganese Gluconate, Peg-55 Propylene Glycol Oleate, Peg-60 Hydrogenated Castor Oil, Polyquaternium-11, Ppg-5-Ceteth-20, Propylene Glycol, Prunus Amygdalus Dulcis Oil / Sweet Almond Oil, Sodium Benzoate, Sodium Hydroxide, Zinc Gluconate.",
+            "description": "Keep sensitivity soothed and preserve your barrier balance with this ultra-gentle cleanser. Irritated skin will rest easy thanks to this non-drying and lightly foaming cleanser that you can use on the face and body, on children and adults alike.",
+            "skin_types": [1, 5, 8]
+        }
+    }
+]

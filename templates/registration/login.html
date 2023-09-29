@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block navbar %}{% endblock %}
+
+{% block content %}
+<div class="custom-login">
+    <div class="custom-login-form">
+      <header class="custom-logo">SkinCo</header>
+      <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Enter your username">
+        <input type="password" name="password" placeholder="Enter your password">
+        <input type="submit" class="button" value="Login">
+      </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Delete product{% endblock %}
+
+{% block content %}
+<div>
+  <h1 class="custom-40px-padding-bottom">Delete product?</h1>
+  <form action="" method="post">
+    {% csrf_token %}
+    <p class="custom-30px-padding-bottom">Are you sure you want to delete product -
+      <strong>{{ object.name }}</strong> by {{ object.brand.name }}?</p>
+    <input type="submit" value="Yes, delete" class="custom-submit-button">
+    <input type="button" value="No, cancel" class="custom-cancel-button" onclick="window.location.href='{% url 'cosmetics:product-list' %}'">
+  </form>
+</div>
+{% endblock %}

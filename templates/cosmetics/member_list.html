@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Members{% endblock %}
+
+{% block content %}
+  <h1>Members</h1>
+  <div class="custom-40px-padding-bottom custom-head">
+    {% include "includes/search_form.html" %}
+    <a class="custom-add-button" href="{% url 'cosmetics:member-create' %}">
+      Add new
+    </a>
+  </div>
+
+  <div class="custom-30px-padding-bottom">
+    <div class="custom-table">
+      {% if member_list %}
+        {% for member in member_list %}
+          <div class="custom-data-table">
+            <p><a href="{% url 'cosmetics:member-detail' pk=member.id%}"><strong>{{ member.username }} {% if user == member %} (Me){% endif %}</strong></a> ({{ member.first_name }} {{ member.last_name }})</p>
+            <div>
+              <a href="{% url 'cosmetics:member-update' pk=member.id%}" class="custom-update-delete"><img src="/static/icons/update.svg" alt=""></a>
+              <a href="{% url 'cosmetics:member-delete' pk=member.id%}" class="custom-update-delete"><img src="/static/icons/delete.svg" alt=""></a>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="">No members have been added yet.</div>
+      {% endif%}
+    </div>
+  </div>
+{% endblock %}
