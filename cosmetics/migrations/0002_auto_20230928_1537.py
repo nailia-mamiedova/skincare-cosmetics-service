@@ -3,9 +3,16 @@
 from django.db import migrations
 from django.db.migrations import RunPython
 
+from django.core.management import call_command
+
 
 def func(apps, schema_editor):
-    from django.core.management import call_command
+    user = apps.get_model('cosmetics', 'Member')
+    user.objects.create_superuser(
+        username='admin',
+        password='admin',
+        email='admin@admin.com'
+    )
     call_command('loaddata', 'fixture_data.json')
 
 

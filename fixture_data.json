@@ -194,26 +194,5 @@
             "description": "Keep sensitivity soothed and preserve your barrier balance with this ultra-gentle cleanser. Irritated skin will rest easy thanks to this non-drying and lightly foaming cleanser that you can use on the face and body, on children and adults alike.",
             "skin_types": [1, 5, 8]
         }
-    },
-    {
-        "model": "cosmetics.member",
-        "pk": 1,
-        "fields": {
-            "password": "pbkdf2_sha256$600000$FSlDd7j866pnNuCE6TQ5u2$C/ZY4wY1hxyLIpCWT0TSBq+ELuoWHY0/4d3dWgsm/NY=",
-            "last_login": "2023-09-28T09:24:14.801Z",
-            "is_superuser": true,
-            "username": "admin",
-            "first_name": "Admin",
-            "last_name": "Admin",
-            "email": "admin@admin.com",
-            "is_staff": true,
-            "is_active": true,
-            "date_joined": "2023-09-08T09:30:30Z",
-            "date_of_birth": "2002-11-01",
-            "skin_type": 1,
-            "groups": [],
-            "user_permissions": [],
-            "favorite_products": [2, 3, 4, 5, 8]
-        }
     }
 ]
