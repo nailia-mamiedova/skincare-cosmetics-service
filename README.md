@@ -12,6 +12,10 @@ help individuals make informed choices for their skincare routines.
 
 [Skincare Service deployed on Render](https://skincare-cosmetics.onrender.com)
 
+### Login Credentials for testing website
+   - **Username:** test
+   - **Password:** 7K4Nv7D5B
+
 ## Local Setup
 
 ### Prerequisites
