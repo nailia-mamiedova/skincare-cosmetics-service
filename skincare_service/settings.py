@@ -30,7 +30,8 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 DEBUG = os.getenv("DJANGO_DEBUG", False)
 
 ALLOWED_HOSTS = [
-    "127.0.0.1"
+    "127.0.0.1",
+    "skincare-cosmetics.onrender.com"
 ]
 
 INTERNAL_IPS = [
