@@ -78,3 +78,9 @@ The application will start running on http://127.0.0.1:8000/.
 After migrating you can use these default credentials for login or create new superuser:
 - **Username:** admin
 - **Password:** admin
+
+## Demo
+
+### Home Page
+
+![Home Page](static/demo.png)
